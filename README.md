@@ -33,6 +33,18 @@ The MCP server exposes several tools to Claude:
    npm run build
    ```
 
+### Global Installation
+
+You can also install the package globally or use it directly with npx:
+
+```bash
+# Install globally
+npm install -g @mcp-dockmaster/mcp-server-jupiter
+
+# Or use directly with npx
+npx @mcp-dockmaster/mcp-server-jupiter
+```
+
 ## Configuration
 
 ### Configure Claude Desktop
@@ -60,10 +72,32 @@ To configure Claude Desktop to use this MCP server:
 }
 ```
 
+If you've installed the package globally or want to use npx, you can configure it like this:
+
+```json
+{
+  "mcpServers": {
+    "mcp-server-jupiter": {
+      "command": "npx",
+      "args": [
+        "@mcp-dockmaster/mcp-server-jupiter"
+      ]
+    }
+  }
+}
+```
+
 ### Running Locally
 
 ```bash
+# If installed locally
 node build/index.js
+
+# If installed globally
+mcp-server-jupiter
+
+# Using npx
+npx @mcp-dockmaster/mcp-server-jupiter
 ```
 
 ## Usage
