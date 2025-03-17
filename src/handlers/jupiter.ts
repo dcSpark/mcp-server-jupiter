@@ -5,7 +5,7 @@ import { PublicKey } from "@solana/web3.js";
 
 const JUPITER_API_BASE_URL = "https://quote-api.jup.ag/v6";
 
-export const getQuoteHandler = async (input: GetQuoteInput): Promise<ToolResultSchema<any>> => {
+export const getQuoteHandler = async (input: GetQuoteInput): Promise<ToolResultSchema> => {
   try {
     // Validate input and output mints
     const inputMintResult = validatePublicKey(input.inputMint);
@@ -67,7 +67,7 @@ export const getQuoteHandler = async (input: GetQuoteInput): Promise<ToolResultS
   }
 };
 
-export const buildSwapTransactionHandler = async (input: BuildSwapTransactionInput): Promise<ToolResultSchema<any>> => {
+export const buildSwapTransactionHandler = async (input: BuildSwapTransactionInput): Promise<ToolResultSchema> => {
   try {
     // Validate user public key
     const userPublicKeyResult = validatePublicKey(input.userPublicKey);
@@ -122,7 +122,7 @@ export const buildSwapTransactionHandler = async (input: BuildSwapTransactionInp
   }
 };
 
-export const sendSwapTransactionHandler = async (input: SendSwapTransactionInput): Promise<ToolResultSchema<any>> => {
+export const sendSwapTransactionHandler = async (input: SendSwapTransactionInput): Promise<ToolResultSchema> => {
   try {
     // Build the request body
     const requestBody: any = {};
