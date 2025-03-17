@@ -1,8 +1,7 @@
-export type ToolResultSchema<T> = {
+export type ToolResultSchema = {
   content: Array<{
     type: string;
     text: string;
   }>;
   isError: boolean;
-  toolResult?: T;
 };
